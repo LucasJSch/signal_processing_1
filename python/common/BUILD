@@ -3,6 +3,9 @@ package(
 )
 
 py_library(
-  name = "amplitude_function",
-  srcs = ["amplitude_function.py"],
+  name = "common",
+  srcs = [
+    "amplitude_function.py",
+    "impulse_responses.py"
+  ],
 )
