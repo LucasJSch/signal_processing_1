@@ -1,11 +1,10 @@
 # Signal Processing I
-This repo has files corresponding to the Signal Processing I course from the Engineering Faculty, University of Buenos Aires.
 
 ## Setting up the environment
 
 Notes:
 * We use in this repo python2.7, but you can use it with 3 configuring it in the Bazel build files.
-* We use the Pylint linter in this repo.
+* We use the Pycodestyle linter in this repo.
 * Every folder has a '\_\_init\_\_.py' file and 'BUILD' file to use them python and bazel packages.
 
 1. Install [Bazel](https://docs.bazel.build/versions/master/install.html).
