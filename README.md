@@ -4,9 +4,9 @@ This repo has files corresponding to the Signal Processing I course from the Eng
 ## Setting up the environment
 
 Notes:
-* We use in this repo python2.7, but you can use it with 3 configuring it in the Bazel build files.
+* We use in this repo python2.7, but you can use it with python3 configuring it in the Bazel build files.
 * We use the Pycodestyle linter in this repo.
-* Every folder has a '\_\_init\_\_.py' file and 'BUILD' file to use them python and bazel packages.
+* Every folder has a '\_\_init\_\_.py' file and 'BUILD' file to use them as python and bazel packages.
 
 1. Install [Bazel](https://docs.bazel.build/versions/master/install.html).
 2. Install [VSCode](https://code.visualstudio.com/download) if you want to follow the lint/style-guide as configured in this repo. 
