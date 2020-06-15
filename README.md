@@ -14,7 +14,7 @@ Notes:
 
 ## Running the scripts
 
-To run the scripts, just go to ```signl_processing_1/python/```, and run:
+To run the scripts, just go to ```signal_processing_1/python/```, and run:
 
 ```
 bazel run guia3:ex_1
