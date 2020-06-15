@@ -26,7 +26,8 @@ from scipy import fft
 
 # Project libs1
 from common.impulse_responses import ideal_lowpass_truncated
-from common.plot_utils import plot_freq_response
+from common.plot_utils import plot_plus
+from common.signal_utils import fft_and_normalize_and_to_dB
 
 nfft = 4 * 2048
 M = 200
@@ -42,21 +43,13 @@ def get_windows():
     return (bartlett, rectangular, blackman, hamming, hanning)
 
 
-def fft_and_normalize_and_to_dB(window):
-    window = np.fft.fftshift(fft(window, nfft))
-    window /= window.max()
-    window = np.absolute(window)
-    20 * np.log10(window)
-    return window
-
-
 def get_fft_windows():
     (bartlett, rectangular, blackman, hamming, hanning) = get_windows()
-    bartlett = fft_and_normalize_and_to_dB(bartlett)
-    rectangular = fft_and_normalize_and_to_dB(rectangular)
-    hamming = fft_and_normalize_and_to_dB(hamming)
-    hanning = fft_and_normalize_and_to_dB(hanning)
-    blackman = fft_and_normalize_and_to_dB(blackman)
+    bartlett = fft_and_normalize_and_to_dB(bartlett, nfft)
+    rectangular = fft_and_normalize_and_to_dB(rectangular, nfft)
+    hamming = fft_and_normalize_and_to_dB(hamming, nfft)
+    hanning = fft_and_normalize_and_to_dB(hanning, nfft)
+    blackman = fft_and_normalize_and_to_dB(blackman, nfft)
 
     return (bartlett, rectangular, blackman, hamming, hanning)
 
@@ -99,19 +92,18 @@ def ex_3_c():
     w = (np.arange(0, nfft) * 2 * math.pi / nfft) - math.pi
     w_c = math.pi / 2
     h_ideal = ideal_lowpass_truncated(w_c, M-1)
-    h_rectangular = fft_and_normalize_and_to_dB(h_ideal)
-    h_blackman = fft_and_normalize_and_to_dB(np.multiply(h_ideal, blackman))
-    h_bartlett = fft_and_normalize_and_to_dB(np.multiply(h_ideal, bartlett))
-    h_hamming = fft_and_normalize_and_to_dB(np.multiply(h_ideal, hamming))
-    h_hanning = fft_and_normalize_and_to_dB(np.multiply(h_ideal, hanning))
+    h_rectangular = fft_and_normalize_and_to_dB(h_ideal, nfft)
+    h_blackman = fft_and_normalize_and_to_dB(np.multiply(h_ideal, blackman), nfft)
+    h_bartlett = fft_and_normalize_and_to_dB(np.multiply(h_ideal, bartlett), nfft)
+    h_hamming = fft_and_normalize_and_to_dB(np.multiply(h_ideal, hamming), nfft)
+    h_hanning = fft_and_normalize_and_to_dB(np.multiply(h_ideal, hanning), nfft)
 
     plt.plot(w, h_bartlett, label="Bartlett")
     plt.plot(w, h_rectangular, label="Rectangular")
     plt.plot(w, h_blackman, label="Blackman")
     plt.plot(w, h_hamming, label="Hamming")
     plt.plot(w, h_hanning, label="Hann/Hanning")
-    plt.title("Windows comparison in frequency with M=200")
-    plot_freq_response()
+    plot_plus(title="Windows comparison in frequency with M=200")
 
 
 def main():

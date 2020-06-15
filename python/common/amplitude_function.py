@@ -7,6 +7,13 @@ import math
 
 def get_amplitude_func(h, filter_type):
     M = len(h) - 1
+    # Pre-checks
+    # TODO: Add symmetric and anti-symmetric checks
+    if ((M%2 == 0) and (filter_type in [2,4])):
+        raise Exception("Incorrect type for length of h.")
+    if ((M%2 == 1) and (filter_type in [1,3])):
+        raise Exception("Incorrect type for length of h.")
+
     if (filter_type is 1):
         return amplitude_type_1(h, M)
     if (filter_type is 2):
