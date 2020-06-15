@@ -4,7 +4,7 @@ import numpy as np
 import math
 
 
-# Truncated impulse response of ideal lowpass filter.
+# Truncated impulse response of ideal lowpass filter with unitary gain.
 # w_c: Cutoff frequency
 # M: Order of filter (Length of filter - 1)
 def ideal_lowpass_truncated(w_c, M):

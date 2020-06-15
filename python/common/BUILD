@@ -6,6 +6,7 @@ py_library(
   name = "common",
   srcs = [
     "amplitude_function.py",
-    "impulse_responses.py"
+    "impulse_responses.py",
+    "plot_utils.py",
   ],
 )

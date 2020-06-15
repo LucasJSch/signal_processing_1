@@ -29,7 +29,7 @@ def ex_1():
         # Impulse response of truncated sinc function
         h_trunc = (w_c / math.pi) * np.sinc((w_c / math.pi) * (n_trunc - M/2))
         # Amplitude function of truncated sinc function
-        A_w_trunc = get_amplitude_func(h_trunc, 1, M)
+        A_w_trunc = get_amplitude_func(h_trunc, 1)
 
         y_trunc = []
         for i in w:

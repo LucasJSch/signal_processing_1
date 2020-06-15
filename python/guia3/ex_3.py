@@ -26,6 +26,7 @@ from scipy import fft
 
 # Project libs1
 from common.impulse_responses import ideal_lowpass_truncated
+from common.plot_utils import plot_freq_response
 
 nfft = 4 * 2048
 M = 200
@@ -42,7 +43,7 @@ def get_windows():
 
 
 def fft_and_normalize_and_to_dB(window):
-    window = fft(window, nfft)
+    window = np.fft.fftshift(fft(window, nfft))
     window /= window.max()
     window = np.absolute(window)
     20 * np.log10(window)
@@ -110,9 +111,7 @@ def ex_3_c():
     plt.plot(w, h_hamming, label="Hamming")
     plt.plot(w, h_hanning, label="Hann/Hanning")
     plt.title("Windows comparison in frequency with M=200")
-    plt.legend()
-    plt.grid()
-    plt.show()
+    plot_freq_response()
 
 
 def main():

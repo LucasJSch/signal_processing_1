@@ -5,7 +5,8 @@ import matplotlib.pyplot as plt
 import math
 
 
-def get_amplitude_func(h, filter_type, M):
+def get_amplitude_func(h, filter_type):
+    M = len(h) - 1
     if (filter_type is 1):
         return amplitude_type_1(h, M)
     if (filter_type is 2):

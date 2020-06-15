@@ -11,3 +11,10 @@ py_binary(
   deps = ["//common"],
   python_version = "PY2",
 )
+
+py_binary(
+  name = "ex_4",
+  srcs = ["ex_4.py"],
+  deps = ["//common"],
+  python_version = "PY2",
+)
