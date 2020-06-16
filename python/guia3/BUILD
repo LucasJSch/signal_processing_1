@@ -46,3 +46,10 @@ py_binary(
   deps = ["//common"],
   python_version = "PY2",
 )
+
+py_binary(
+  name = "ex_9",
+  srcs = ["ex_9.py"],
+  deps = ["//common"],
+  python_version = "PY2",
+)
