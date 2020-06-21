@@ -53,3 +53,24 @@ py_binary(
   deps = ["//common"],
   python_version = "PY2",
 )
+
+py_binary(
+  name = "ex_12",
+  srcs = ["ex_12.py"],
+  deps = ["//common"],
+  python_version = "PY2",
+)
+
+py_binary(
+  name = "ex_16",
+  srcs = ["ex_16.py"],
+  deps = ["//common"],
+  python_version = "PY2",
+)
+
+py_binary(
+  name = "ex_17",
+  srcs = ["ex_17.py"],
+  deps = ["//common"],
+  python_version = "PY2",
+)
