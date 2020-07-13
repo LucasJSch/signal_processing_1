@@ -88,3 +88,31 @@ py_binary(
   deps = ["//common"],
   python_version = "PY2",
 )
+
+py_binary(
+  name = "ex_21",
+  srcs = ["ex_21.py"],
+  deps = ["//common"],
+  python_version = "PY2",
+)
+
+py_binary(
+  name = "ex_22",
+  srcs = ["ex_22.py"],
+  deps = ["//common"],
+  python_version = "PY2",
+)
+
+py_binary(
+  name = "ex_23",
+  srcs = ["ex_23.py"],
+  deps = ["//common"],
+  python_version = "PY2",
+)
+
+py_binary(
+  name = "ex_24",
+  srcs = ["ex_24.py"],
+  deps = ["//common"],
+  python_version = "PY2",
+)
